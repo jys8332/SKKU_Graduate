@@ -1,0 +1,13 @@
+{% extends "base.html"%}
+{% block content %}
+
+<div class="upload_file">
+  <h1>Upload File!</h1>
+  <form action="http://127.0.0.1:5000/lecture" method="POST" enctype="multipart/form-data">
+    <input type="file" name="record_file">
+    <input type="submit">
+  </form>
+
+</div>
+
+{% endblock %}

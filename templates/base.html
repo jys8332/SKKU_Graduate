@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>SKKU Learning</title>
+  <link rel="stylesheet" href=" {{ url_for('static', filename='css/base.css') }}">
+  <link rel="stylesheet" href=" {{ url_for('static', filename='css/upload.css') }}">
+  <link rel="stylesheet" href=" {{ url_for('static', filename='css/summary.css') }}">
+  <link rel="stylesheet" href=" {{ url_for('static', filename='css/qna.css') }}">
+</head>
+
+<body>
+  <div class="container">
+    <span class="navi_tab">
+      <div class="history">
+        <div class="logo_text">SKKU Learning</div>
+        <div class="his_title">History</div>
+        <div>
+          <button class="note_button">
+            New Note
+          </button>
+        </div>
+      </div>
+    </span>
+    <span>
+      <div class="edu_type">
+        <div class="type_tab">
+          <button class="tab_button">속기본</button>
+          <button class="tab_button">요약본</button>
+          <button class="tab_button">문제</button>
+        </div>
+      </div>
+      <div class="edu_content">
+        {% block content %}
+        {% endblock %}
+      </div>
+    </span>
+  </div>
+
+
+
+
+</body>
+
+</html>

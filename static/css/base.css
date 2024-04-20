@@ -1,0 +1,86 @@
+.container {
+  background-color: white;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  height: 100vh;
+  text-align: center;
+  vertical-align: middle;
+
+}
+
+.navi_tab {
+  background-color: #303A45;
+  height: 100%;
+  width: 100%;
+}
+
+.logo_text {
+  color: white;
+  font-size: 25pt;
+  font-weight: bold;
+  padding-top: 20px;
+}
+
+.history {
+  background-color: #303A45;
+  height: 100%;
+  width: 100%;
+  color: #969695;
+  text-align: center;
+}
+
+.his_title {
+  background-color: #303A45;
+  font-size: 20pt;
+  font-weight: bold;
+  padding-left: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: left;
+}
+
+.note_button {
+  background-color: #475464;
+  color: white;
+  height: 80px;
+  width: 90%;
+  font-size: 17pt;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 10px;
+  box-shadow: black 1px 1px 1px 1px;
+}
+
+
+
+.edu_type {
+  text-align: right;
+  display: table;
+  width: 100%;
+  height: 150px;
+
+}
+
+
+.type_tab {
+  display: table-cell;
+
+  vertical-align: bottom;
+  width: 100%;
+  padding-right: 20px;
+  background-color: orange;
+}
+
+.tab_button {
+  height: 50px;
+  width: 100px;
+  font-weight: bold;
+  font-size: 15pt;
+  font-family: 'Gothic';
+}
+
+
+.edu_content {
+  background-color: white;
+  height: 100%;
+}

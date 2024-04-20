@@ -1,0 +1,43 @@
+.summary {
+  font-size: 20pt;
+  font-weight: bold;
+  background-color: white;
+  margin: 50px;
+  border-radius: 5px;
+}
+
+.summary_title {
+  background-color: white;
+  padding-bottom: 10px;
+  text-align: left;
+  padding-left: 20px;
+
+}
+
+.summary_content {
+  text-align: left;
+  height: 700px;
+  overflow-y: scroll;
+  font-weight: bold;
+  line-height: 2em;
+  font-size: 20pt;
+  padding-left: 50px;
+  padding-right: 50px;
+  margin: 50px;
+  color: #475464;
+  border-width: 15px;
+  border-color: #303A45;
+  background-color: white;
+}
+
+.summary_border {
+  background-color: #303A45;
+  padding: 7px;
+  border-radius: 10px;
+}
+
+.qna_button {
+  font-size: 25pt;
+  font-weight: bold;
+
+}
