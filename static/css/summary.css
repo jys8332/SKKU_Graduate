@@ -1,9 +1,15 @@
+.divider {
+  border-bottom: 1px solid #475464;
+  margin-bottom: 10px;
+}
+
 .summary {
   font-size: 20pt;
   font-weight: bold;
   background-color: white;
   margin: 50px;
   border-radius: 5px;
+
 }
 
 .summary_title {
@@ -28,16 +34,27 @@
   border-width: 15px;
   border-color: #303A45;
   background-color: white;
+  padding-top: 50px;
+  padding: 50px;
 }
 
 .summary_border {
   background-color: #303A45;
   padding: 7px;
   border-radius: 10px;
+
 }
 
 .qna_button {
   font-size: 25pt;
   font-weight: bold;
+  background-color: #50b896;
+  color: white;
+  padding: 20px;
+  border-width: 0px;
+  border-radius: 5px;
+}
 
+.gen_button {
+  text-align: right;
 }

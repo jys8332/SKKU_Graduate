@@ -20,21 +20,6 @@ device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cp
 
 
 print(os.getcwd())
-# # model = whisper.load_model("base")
-# model = whisper.load_model("large-v2")
-
-# sum_model_name="traintogpb/pko-t5-large-kor-for-colloquial-summarization-finetuned"
-# sum_model = AutoModelForSeq2SeqLM.from_pretrained(sum_model_name)
-# sum_model.to(device)
-# tokenizer = AutoTokenizer.from_pretrained(sum_model_name)
-# par_model = SentenceTransformer("jhgan/ko-sroberta-multitask")
-
-
-
-# gen_model_name = "traintogpb/mt5-large-kor-qa-generation-finetuned"
-# tokenizer = MT5Tokenizer.from_pretrained(gen_model_name)
-# gen_model = MT5ForConditionalGeneration.from_pretrained(gen_model_name)
-# gen_model.to(device)
 
 
 
@@ -170,22 +155,23 @@ def upload_mp3():
 @app.route('/lecture' , methods=['GET', 'POST'])
 
 def script():
-    if request.method=='POST':
-        if os.path.isfile("STT.txt"):
+    
+    if os.path.isfile("STT.txt"):
 
-          file = open("STT.txt", 'r', encoding="utf-8")    
-          STT_text = file.read()
-
-          return render_template('lecture.html', script=STT_text)
-        else:
-          openai.api_key = 'YOUR_API_KEY'
-          # model = whisper.load_model("base")
-          model = whisper.load_model("large-v2")
-          f = request.files['record_file']
-          f.save(secure_filename("sound_file.mp3"))
-          STT_text = STT(model, "sound_file.mp3")
-          return render_template('lecture.html', script=STT_text)
-    return render_template('lecture.html', script="Upload Failed")
+      file = open("STT.txt", 'r', encoding="utf-8")    
+      STT_text = file.read()
+      his_list = ["sound_file.mp3"]
+      return render_template('lecture.html', script=STT_text, history_list=his_list)
+    else:
+      if request.method=='POST':
+        openai.api_key = 'YOUR_API_KEY'
+        # model = whisper.load_model("base")
+        model = whisper.load_model("large-v2")
+        f = request.files['record_file']
+        f.save(secure_filename("sound_file.mp3"))
+        STT_text = STT(model, "sound_file.mp3")
+        return render_template('lecture.html', script=STT_text)
+    return render_template('lecture.html', script="Upload Failed", history_list=["sound_file.mp3"])
 
 
 @app.route('/summary' , methods=['GET', 'POST'])
@@ -209,17 +195,23 @@ def summary():
             stt_result = file.read()     
             sum_list = summarize(sum_model, stt_result, tokenizer)
         sum_result="\n".join(sum_list)
-        return render_template('summary.html', summary=sum_result)
+        return render_template('summary.html', summary_list=sum_list)
     # return render_template('summary.html', summary="Summary Failed")
 
 @app.route('/qna' , methods=['GET', 'POST'])
 
 def qna():
     # if request.method=='POST':
-        file_path = "qna.txt"
+        file_path = "question.txt"
         if os.path.isfile(file_path):
             file = open(file_path, 'r', encoding="utf-8")    
-            qna_result = file.read()  
+            question_file = file.read()  
+            question_list = question_file.split("\n")
+            file.close()
+            file = open("answer.txt", 'r', encoding="utf-8") 
+            answer_file = file.read()  
+            answer_list = answer_file.split("\n")
+            file.close()
         else:
             gen_model_name = "traintogpb/mt5-large-kor-qa-generation-finetuned"
             tokenizer = MT5Tokenizer.from_pretrained(gen_model_name)
@@ -235,7 +227,7 @@ def qna():
             for idx in range(len(question_list)):
                 qna_result +=f"Question {idx+1} : {question_list[idx]}\n"
                 qna_result +=f"Answer {idx+1} : {answer_list[idx]}\n"
-        return render_template('qna.html', qna=qna_result)
+        return render_template('qna.html', q_list = question_list, a_list = answer_list)
     # return render_template('qna.html', qna="QNA Generation Failed")
 
 

@@ -1,8 +1,58 @@
 .upload_file {
-  color: blue;
-  background-color: brown;
+  color: #303A45;
+  background-color: white;
   vertical-align: middle;
   height: 100%;
   padding-top: 200px;
+  font-size: 20pt;
 
+
+}
+
+.upload-name {
+  display: inline-block;
+  height: 40px;
+  padding: 0 10px;
+  vertical-align: middle;
+  border: 1px solid #dddddd;
+  width: 78%;
+  color: #999999;
+  font-size: 15pt;
+  width: 600px;
+  font-weight: bold;
+  height: 70px;
+}
+
+.upload-label {
+  display: inline-block;
+  padding: 10px 20px;
+  color: #fff;
+  vertical-align: middle;
+  background-color: #999999;
+  cursor: pointer;
+  height: 40px;
+  margin-left: 10px;
+  font-size: 20pt;
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+.submit_button {
+  font-size: 20pt;
+  font-weight: bold;
+  padding: 15px 25px 15px 25px;
+  background-color: #50b896;
+  color: white;
+  border-width: 0px;
+  border-radius: 8px;
+}
+
+#file {
+  display: none;
+}
+
+.upload_title {
+  text-align: left;
+  padding-left: 100px;
+  margin-bottom: 250px;
 }

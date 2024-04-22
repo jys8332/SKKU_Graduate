@@ -3,7 +3,7 @@
   margin-bottom: 10px;
 }
 
-.qna {
+.lecture {
   font-size: 20pt;
   font-weight: bold;
   background-color: white;
@@ -11,7 +11,7 @@
   border-radius: 5px;
 }
 
-.qna_title {
+.lecture_title {
   background-color: white;
   padding-bottom: 10px;
   text-align: left;
@@ -19,7 +19,7 @@
 
 }
 
-.qna_content {
+.lecture_content {
   text-align: left;
   height: 700px;
   overflow-y: scroll;
@@ -37,8 +37,22 @@
 
 }
 
-.qna_border {
+.lecture_border {
   background-color: #303A45;
   padding: 7px;
   border-radius: 10px;
+}
+
+.sum_button {
+  font-size: 25pt;
+  font-weight: bold;
+  background-color: #50b896;
+  color: white;
+  padding: 20px;
+  border-width: 0px;
+  border-radius: 5px;
+}
+
+.gen_button {
+  text-align: right;
 }

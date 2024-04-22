@@ -2,10 +2,14 @@
 {% block content %}
 
 <div class="upload_file">
-  <h1>Upload File!</h1>
+  <div class="upload_title">
+    <h1>Upload</h1>
+  </div>
   <form action="http://127.0.0.1:5000/lecture" method="POST" enctype="multipart/form-data">
-    <input type="file" name="record_file">
-    <input type="submit">
+    <input class="upload-name" value="첨부파일" placeholder="첨부파일">
+    <label class="upload-label" for="file">파일찾기</label>
+    <input type="file" id="file" name="record_file">
+    <input class="submit_button" type="submit" value="Submit">
   </form>
 
 </div>

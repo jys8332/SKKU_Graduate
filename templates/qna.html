@@ -1,10 +1,19 @@
 {% extends "base.html"%}
 {% block content %}
 
-<div class="lecture">
-  <h1>Q & A!</h1>
-  {{qna}}
-
+<div class="qna">
+  <div class="qna_title">
+    <h1>Q & A</h1>
+  </div>
+  <div class="qna_border">
+    <div class="qna_content">
+      {% for i in range(q_list|length) %}
+      {{ q_list[i]}}<br>
+      {{ a_list[i]}}<br>
+      <div class="divider"></div>
+      {% endfor %}
+    </div>
+  </div>
 </div>
 
 {% endblock %}

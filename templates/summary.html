@@ -3,14 +3,20 @@
 
 <div class="summary">
   <div class="summary_title">
-    <h1>Summary!</h1>
+    <h1>Summary</h1>
   </div>
   <div class="summary_border">
-    <div class="summary_content">{{summary}}</div>
+    <div class="summary_content">
+      {% for i in range(summary_list|length) %}
+      {{ "{}. {}".format(i, summary_list[i])}}<br>
+      <div class="divider"></div>
+      {% endfor %}
+    </div>
   </div>
 
 </div>
+<div class="gen_button"><button type="button" class="qna_button" onclick="location.href='/qna'">Make Q & A </button>
+</div>
 
-<button type="button" class="qna_button" onclick="location.href='/qna'">QnA Generation</button>
 
 {% endblock %}
